@@ -56,7 +56,7 @@ sales_df["Ship Date"] = pd.to_datetime(
 
 monthly_sales = (
     sales_df
-    .groupby(pd.Grouper(key="Order Date", freq="M"))["Sales"]
+    .groupby(pd.Grouper(key="Order Date", freq="ME"))["Sales"]
     .sum()
     .reset_index()
 )
@@ -172,7 +172,7 @@ if page == "Sales Overview":
 
     monthly_filtered = (
         filtered_df
-        .groupby(pd.Grouper(key="Order Date", freq="M"))["Sales"]
+        .groupby(pd.Grouper(key="Order Date", freq="ME"))["Sales"]
         .sum()
         .reset_index()
     )
