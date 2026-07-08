@@ -44,11 +44,13 @@ sales_df = pd.read_csv("data/train.csv")
 
 sales_df["Order Date"] = pd.to_datetime(
     sales_df["Order Date"],
+    format="mixed",
     dayfirst=True
 )
 
 sales_df["Ship Date"] = pd.to_datetime(
     sales_df["Ship Date"],
+    format="mixed",
     dayfirst=True
 )
 
